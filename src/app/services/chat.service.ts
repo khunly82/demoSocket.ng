@@ -1,6 +1,7 @@
 import { Injectable, Signal, WritableSignal, signal } from '@angular/core';
 import { HttpTransportType, HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
 import { MessageService } from 'primeng/api';
+import { MessageModel } from '../models/message.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class ChatService {
 
   private _connection!: HubConnection;
   
-  public messages: WritableSignal<any[]> = signal([]);
+  public messages: WritableSignal<MessageModel[]> = signal([]);
 
   constructor(
     private readonly _messsageService: MessageService

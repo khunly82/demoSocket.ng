@@ -1,11 +1,11 @@
 :host {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
 }
 #container {
     display: flex;
-    flex: 1;
+    height: calc(100% - 70px);
     nav {
         width: 300px;
         background-color: white;
@@ -15,5 +15,8 @@
 
     main {
         padding: 20px;
+        flex: 1;
+        height: 100%;
+        background-color: #eee;
     }
 }

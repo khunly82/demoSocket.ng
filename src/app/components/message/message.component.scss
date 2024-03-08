@@ -1,0 +1,25 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 10px;
+    .info {
+        font-style: italic;
+        color: gray;
+        font-size: 12px;
+    }
+    .bubble {
+        margin-top: 3px;
+        padding: 20px;
+        border-radius: 25px;
+        width: 90%;
+        background-color: var(--blue-500);
+        color: white;
+    }
+    &.owner {
+        align-items: flex-start;
+        .bubble {
+            background-color: var(--red-500);
+        }
+    }
+}

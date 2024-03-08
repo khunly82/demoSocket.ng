@@ -1,9 +1,11 @@
-@for (item of messages; track $index) {
-    <p>{{ item.content }}</p>
-}
+<div class="messages">
+    @for (item of messages; track $index) {
+        <app-message [message]="item"></app-message>
+    }
+</div>
 
 
-<div>
+
     <form [formGroup]="form" (ngSubmit)="send()">
         <textarea formControlName="content" pInputTextarea></textarea>
         <p-button type="submit" 
@@ -13,4 +15,4 @@
                   severity="info"
                   [disabled]="form.invalid"></p-button>
     </form>
-</div>
+

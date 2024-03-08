@@ -1,0 +1,10 @@
+<div [ngClass]="{ owner: message.owner }" class="message-container">
+    <div class="info">
+        <span *ngIf="!message.owner">{{ message.user }}</span>
+        &nbsp;
+        <span>{{ message.created | date: 'dd/MM/yyyy à HH:mm:ss' }}</span>
+    </div>
+    <div class="bubble">
+        {{ message.content }}
+    </div>
+</div>

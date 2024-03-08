@@ -1,0 +1,16 @@
+.messages {
+    height: 90%;
+    overflow-y: scroll;
+}
+
+form {
+    height: 10%;
+    display: flex;
+    margin: 10px;
+    gap: 20px;
+    > textarea {
+        width: 100%;
+        resize: none;
+    }
+}
+
