@@ -16,9 +16,13 @@ export class ChatService {
   ) { 
     this._connection = new HubConnectionBuilder()
       .withUrl('https://demoappsocket.azurewebsites.net/ws/chat')
+      .withAutomaticReconnect()
       .build()
     
       this._connection.start().then(() => {
+        this._connection.on('allMessages', data => {
+          this.messages.set(data);
+        });
         this._connection.on('newMessage', data => {
           this.messages.update(m => [...m, data]);
           this._messsageService.add({
@@ -26,6 +30,8 @@ export class ChatService {
             summary: `Vous avez recu un message de ${data.user}`
           })
         })
+      }).catch(error => {
+        console.log(error)
       })
   }
 

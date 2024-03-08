@@ -2,8 +2,15 @@
     <p>{{ item.content }}</p>
 }
 
-<p-button (onClick)="send()" 
-          label="Envoyer"
-          icon="pi pi-send"
-          iconPos="right"
-          severity="info"></p-button>
+
+<div>
+    <form [formGroup]="form" (ngSubmit)="send()">
+        <textarea formControlName="content" pInputTextarea></textarea>
+        <p-button type="submit" 
+                  label="Envoyer"
+                  icon="pi pi-send"
+                  iconPos="right"
+                  severity="info"
+                  [disabled]="form.invalid"></p-button>
+    </form>
+</div>
