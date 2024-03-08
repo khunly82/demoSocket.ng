@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    padding: 0 20px;
+    box-shadow: 0 5px 10px 10px #ccc;
+    height: 70px;
+    align-items: center;
+    > div {
+        flex: 1;
+        &:nth-child(2) {
+            text-align: center;
+        }
+        &:nth-child(3) {
+            text-align: right;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@for (item of messages; track $index) {
+    <p>{{ item.content }}</p>
+}
+
+<p-button (onClick)="send()" 
+          label="Envoyer"
+          icon="pi pi-send"
+          iconPos="right"
+          severity="info"></p-button>
